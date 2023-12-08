@@ -1,1 +1,43 @@
 test3, space test
+
+ターミナルコマンド実装とbranch push
+lumi@USERnoiMac protoPWM % password_file="passwords.txt"
+lumi@USERnoiMac protoPWM % while true; do
+while> echo "パスワードマネージャーへようこそ！" 
+while> read service_name
+while> echo "ユーザー名を入力してください:"
+while> read user_name
+while> echo "パスワードを入力してください:"
+while> read -s password
+while> echo Thank you!
+while> echo "${service_name}:${user_name}:${password}" >> "$password_file"
+while> if [ "$service_name" ]; then        
+        break
+    fi
+while> done
+パスワードマネージャーへようこそ！
+ほhoge
+ユーザー名を入力してください:
+fuga
+パスワードを入力してください:
+Thank you!
+lumi@USERnoiMac protoPWM % git branch
+* feature-save
+  main
+lumi@USERnoiMac protoPWM % git add .
+lumi@USERnoiMac protoPWM % git commit -m "program of add"
+[feature-save 0069ae3] program of add
+ 3 files changed, 6 insertions(+)
+ create mode 100644 echo
+ create mode 100644 passwords.txt
+ create mode 100644 read
+lumi@USERnoiMac protoPWM % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 395 bytes | 395.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/lumijoe/protoPWM.git
+   fbf6019..0069ae3  feature-save -> feature-save
+lumi@USERnoiMac protoPWM % 
